@@ -1,11 +1,10 @@
-import streamlit as st
 import json
-from streamlit_lottie import st_lottie
 import pandas as pd
-from utils.preprocess_user_data import auto_detect_filter_data
-from utils.preprocess_user_data import preprocess_data
-from predict import show_predict_text,process_predict_csv, show_predict_csv
+import streamlit as st
 from annotated_text import annotated_text
+from streamlit_lottie import st_lottie
+from predict import process_predict_csv, show_predict_csv, show_predict_text
+from utils.preprocess_user_data import auto_detect_filter_data, preprocess_data
 
 # Initialize session state for file upload status
 if 'file_uploaded' not in st.session_state:
@@ -52,7 +51,7 @@ elif choice == 'Upload':
             if results is not None:  # Kiểm tra xem results có phải là None hay không
                 for result in results:
                     st.write(f'=>{result}\n')     
-            elif results == None:
+            elif results is None:
                 st.write("Sorry, I don't recognize any aspect of smartphone in your review")   
         elif 'user_input' in st.session_state and st.session_state.user_input == '':
             st.warning('Please ensure to fill some text before hitting enter.')  # Cảnh báo nếu không nhập gì
