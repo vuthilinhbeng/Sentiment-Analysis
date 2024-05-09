@@ -1,9 +1,10 @@
 import json
 import pandas as pd
+
 import streamlit as st
 from annotated_text import annotated_text
-from streamlit_lottie import st_lottie
 from predict import process_predict_csv, show_predict_csv, show_predict_text
+from streamlit_lottie import st_lottie
 from utils.preprocess_user_data import auto_detect_filter_data, preprocess_data
 
 # Initialize session state for file upload status
