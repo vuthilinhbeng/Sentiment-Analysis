@@ -4,8 +4,6 @@ import pandas as pd
 import numpy as np
 import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-import tensorflow as tf
-
 PRETRAINED_MODEL = 'vinai/phobert-base'
 
 def read_csv(file_path):
