@@ -1,10 +1,6 @@
 import pandas as pd
 from utils.preprocess_text import preprocess
-import os
 TF_ENABLE_ONEDNN_OPTS='0'
-import tensorflow
-from tensorflow.data import Dataset
-from utils.tokenizer import call_tokenizer
 def auto_detect_filter_data(input_path, output_path):
     # Đọc dữ liệu từ file vào một DataFrame
     df = pd.read_csv(input_path)
