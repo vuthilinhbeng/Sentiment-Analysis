@@ -1,5 +1,3 @@
-from tensorflow.train import latest_checkpoint
-from tensorflow.keras.models import load_model
 from create_model import create_model
 from transformers import TFAutoModel
 from utils.tokenizer import PRETRAINED_MODEL
