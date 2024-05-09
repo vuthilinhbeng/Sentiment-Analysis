@@ -1,16 +1,15 @@
-from tensorflow.keras.models import load_model
-from create_model import create_model
-from transformers import TFAutoModel
-from utils.tokenizer import PRETRAINED_MODEL
-from utils.variables import df_test, tokenizer
-from utils.preprocess_text import preprocess
+import os
 import numpy as np
-from tensorflow.data import Dataset
-from utils.preprocess_user_data import preprocess_data
 import pandas as pd
 import urllib.request
-import os
 import streamlit as st
+from tensorflow.data import Dataset
+from transformers import TFAutoModel
+from create_model import create_model
+from utils.tokenizer import PRETRAINED_MODEL
+from utils.preprocess_text import preprocess
+from utils.variables import df_test, tokenizer
+from tensorflow.keras.models import load_model
 @st.cache_resource
 def load_model():
     if not os.path.isfile('model.h5'):
