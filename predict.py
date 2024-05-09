@@ -9,7 +9,6 @@ from create_model import create_model
 from utils.tokenizer import PRETRAINED_MODEL
 from utils.preprocess_text import preprocess
 from utils.variables import df_test, tokenizer
-from tensorflow.keras.models import load_model
 @st.cache_resource
 def load_model():
     if not os.path.isfile('model.h5'):
@@ -46,7 +45,7 @@ def show_predict_text(text):
     results = []
     for i in range(len(pred)):
         absa_pred = print_acsa_pred(replacements, categories, pred[i], confidences[i])
-        if(absa_pred != None):
+        if(absa_pred is not None):
             for i in range(len(absa_pred)):
                 parts = absa_pred[i].split(',')
                 positive_value = parts[1]
@@ -79,7 +78,7 @@ def process_predict_csv(df_clean, output_csv_path):
     results = []
     for i in range(len(pred)):
         absa_pred = print_acsa_pred(replacements, categories, pred[i], confidences[i])
-        if(absa_pred != None):
+        if(absa_pred is not None):
             for i in range(len(absa_pred)):
                 parts = absa_pred[i].split(',')
                 positive_value = parts[1]
