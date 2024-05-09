@@ -3,7 +3,6 @@ from utils.tokenizer import call_tokenizer, tokenize_function,read_csv, make_out
 from utils.config import BATCH_SIZE, TRAIN_PATH, TEST_PATH, VAL_PATH, MODEL_PATH
 import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-import tensorflow as tf
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from utils.tf_format import preprocess_tokenized_dataset
 
